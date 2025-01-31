@@ -1,14 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-async function ProductDetails({ params }: {
-    params: Promise<{productId: string}>;
+async function ProductDetails({
+	params,
+}: {
+	params: Promise<{ productId: string }>;
 }) {
-    const productId = (await params).productId;
-  return (
-    <div>
-        <h1>Details about product - {productId}</h1>
-    </div>
-  )
+	const { productId } = await params;
+	return (
+		<div>
+			<h1>Details about product - {productId}</h1>
+		</div>
+	);
 }
 
-export default ProductDetails
+export default ProductDetails;
